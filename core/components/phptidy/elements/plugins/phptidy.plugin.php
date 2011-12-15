@@ -54,7 +54,7 @@ if (!function_exists("fixJson")) {
 }
 
 ob_start();
-include dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phptidy.plugin.default.properties.js';
+include $modx->getOption('core_path') . 'components/phptidy/elements/plugins/phptidy.plugin.default.properties.js';
 $json = ob_get_contents();
 ob_end_clean();
 
