@@ -33,8 +33,12 @@ set_time_limit(0);
 
 define('PKG_NAME', 'PHP Tidy for MODx');
 define('PKG_NAME_LOWER', 'phptidy');
-define('PKG_VERSION', '1.0.0');
-define('PKG_RELEASE', 'pl');
+define('PKG_VERSION', '1.0.1');
+define('PKG_RELEASE', 'rc1');
+
+/* override with your own defines here (see build.config.sample.php) */
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'build.config.php';
+require_once realpath(MODX_CORE_PATH . 'model/modx/modx.class.php');
 
 $root = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR;
 $sources = array(
@@ -42,16 +46,12 @@ $sources = array(
     'build' => $root . '_build' . DIRECTORY_SEPARATOR,
     'data' => realpath($root . '_build/data/') . DIRECTORY_SEPARATOR,
     'properties' => realpath($root . '_build/data/properties/') . DIRECTORY_SEPARATOR,
-    'lexicon' => realpath($root . 'core/components/phptidy/lexicon/') . DIRECTORY_SEPARATOR,
-    'docs' => realpath($root . 'core/components/phptidy/docs/') . DIRECTORY_SEPARATOR,
-    'source_core' => realpath($root . 'core/components/phptidy'),
+    'lexicon' => realpath(MODX_CORE_PATH . 'components/phptidy/lexicon/') . DIRECTORY_SEPARATOR,
+    'docs' => realpath(MODX_CORE_PATH . 'components/phptidy/docs/') . DIRECTORY_SEPARATOR,
+    'source_core' => realpath(MODX_CORE_PATH . 'components/phptidy'),
 );
 unset($root);
 require_once $sources['build'] . '/includes/functions.php';
-
-/* override with your own defines here (see build.config.sample.php) */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'build.config.php';
-require_once realpath(MODX_CORE_PATH . 'model/modx/modx.class.php');
 
 $modx = new modX();
 $modx->initialize('mgr');

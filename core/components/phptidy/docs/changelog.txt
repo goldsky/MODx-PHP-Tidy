@@ -1,5 +1,9 @@
 Changelog for PHP Tidy for MODx.
 
-PHP Tidy 1.0.0-pl
+1.0.1-rc1
+================================================================
+- Bugfix the path to the default property
+
+1.0.0-pl
 ================================================================
 - Initial commit
