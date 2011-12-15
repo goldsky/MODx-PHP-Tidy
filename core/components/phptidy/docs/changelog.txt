@@ -1,0 +1,5 @@
+Changelog for PHP Tidy for MODx.
+
+PHP Tidy 1.0.0-pl
+================================================================
+- Initial commit
